@@ -19,6 +19,5 @@ void Exercise_1(){
 		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, bool_yellow);
 		bool_red = !bool_red;
 		bool_yellow = !bool_yellow;
-		HAL_Delay(1000);
 
 }

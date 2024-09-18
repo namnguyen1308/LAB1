@@ -20,5 +20,4 @@ void Exercise_1(){
 		bool_red = !bool_red;
 		bool_yellow = !bool_yellow;
 		HAL_Delay(1000);
-
 }

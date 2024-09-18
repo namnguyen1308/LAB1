@@ -15,10 +15,12 @@ bool bool_red = 1;
 bool bool_yellow = 0;
 
 void Exercise_1(){
+	if(flag_timer2){
 		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, bool_red);
 		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, bool_yellow);
 		bool_red = !bool_red;
 		bool_yellow = !bool_yellow;
-		HAL_Delay(1000);
 
+		flag_timer2 = 0;
+	}
 }
