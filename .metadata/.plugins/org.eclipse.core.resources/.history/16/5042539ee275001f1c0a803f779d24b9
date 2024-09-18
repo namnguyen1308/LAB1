@@ -1,0 +1,45 @@
+/*
+ * ex2.c
+ *
+ *  Created on: Sep 19, 2024
+ *      Author: NAM NGUYEN
+ */
+
+
+#include "ex2.h"
+typedef enum {state_0, state_1, state_2, state_3} state;
+state pre_state = state_0;
+void ex_2(){
+	switch (pre_state) {
+		case state_0:
+			//traffic light 1
+			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
+			pre_state = state_1;
+			HAL_Delay(3000);
+			break;
+
+		case state_1:
+			//traffic light 1
+			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
+			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
+			pre_state = state_2;
+			HAL_Delay(2000);
+			break;
+
+		case state_2:
+			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
+			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
+			pre_state = state_0;
+			HAL_Delay(5000);
+			break;
+
+		default:
+			break;
+	}
+
+
+}
