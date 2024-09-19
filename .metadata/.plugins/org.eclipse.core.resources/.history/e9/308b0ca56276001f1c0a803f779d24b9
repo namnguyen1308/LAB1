@@ -11,6 +11,6 @@
 #include "stdio.h"
 #include "string.h"
 
-void ex3();
+void ex2();
 
 #endif /* INC_EX3_H_ */

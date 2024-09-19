@@ -94,7 +94,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
+  typedef enum {state_0, state_1, state_2, state_3} state;
+  state pre_state = state_0;
   while (1)
   {
     /* USER CODE END WHILE */
