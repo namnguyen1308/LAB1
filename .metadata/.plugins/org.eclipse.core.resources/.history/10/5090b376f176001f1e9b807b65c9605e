@@ -52,7 +52,7 @@ void trafficLightControl() {
     HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, RESET); // Tắt đèn vàng tuyến 2
     HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, SET);    // Bật đèn xanh tuyến 2
 
-    for (int i = 5; i > 2; i--) {
+    for (int i = 5; i > 3; i--) {
         display7SEG(i);          // Hiển thị số đếm ngược cho tuyến đường 1
         displaySecond7SEG(i - 2);    // Hiển thị số đếm ngược cho tuyến đường 2 (3 giây đèn xanh)
         HAL_Delay(1000);  // Đợi 1 giây
@@ -63,7 +63,7 @@ void trafficLightControl() {
     HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, SET);    // Bật đèn vàng tuyến 2
     for (int i = 2; i > 0; i--) {
         display7SEG(i);          // Hiển thị số đếm ngược cho tuyến đường 1
-        displaySecond7SEG(i);    // Hiển thị số đếm ngược cho tuyến đường 2 (3 giây đèn vàng)
+        displaySecond7SEG(i);    // Hiển thị số đếm ngược cho tuyến đường 2 (2 giây đèn vàng)
         HAL_Delay(1000);  // Đợi 1 giây
     }
 
