@@ -94,16 +94,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int hour = 0;
-   int minute = 0;
-   int second = 0;
+   int hour=10;
+   int minute=7;
+   int second=4;
+   int count=0;
    while (1) {
 
  	  setNumberOnClock(hour);
  	  setNumberOnClock(minute);
  	  setNumberOnClock(second);
- 	  // Đợi 1 giây
- 	  HAL_Delay(1000);
+ 	  // Đợi 5 giây
+ 	  HAL_Delay(250);
 
  	         // Tắt 3 LED tương ứng với giờ, phút và giây trước đó
  	  clearNumberOnClock(hour);
@@ -113,7 +114,12 @@ int main(void)
  	  if (second>=12)
  	  {
  		  second=0;
+
+ 		  count++;
+ 	  }
+ 	  if (count>=5) {
  		  minute++;
+ 		  count=0;
  	  }
  	  if (minute>=12)
  	  {
