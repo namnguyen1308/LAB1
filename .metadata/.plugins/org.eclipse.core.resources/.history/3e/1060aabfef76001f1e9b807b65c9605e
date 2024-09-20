@@ -34,13 +34,13 @@ void display7SEG(int num) {
 void displaySecond7SEG(int num) {
 	if (num < 0 || num > 9) return;
 	// Đặt giá trị các chân PB7-PB13 (LED11 đến LED77) tương ứng với số num
-	HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, (segment_data[num] & 0x01) ? SET : RESET);  // LED11
-	HAL_GPIO_WritePin(LED22_GPIO_Port, LED22_Pin, (segment_data[num] & 0x02) ? SET : RESET);  // LED22
-	HAL_GPIO_WritePin(LED33_GPIO_Port, LED33_Pin, (segment_data[num] & 0x04) ? SET : RESET);  // LED33
-	HAL_GPIO_WritePin(LED44_GPIO_Port, LED44_Pin, (segment_data[num] & 0x08) ? SET : RESET);  // LED44
-	HAL_GPIO_WritePin(LED55_GPIO_Port, LED55_Pin, (segment_data[num] & 0x10) ? SET : RESET);  // LED55
-	HAL_GPIO_WritePin(LED66_GPIO_Port, LED66_Pin, (segment_data[num] & 0x20) ? SET : RESET);  // LED66
-	HAL_GPIO_WritePin(LED77_GPIO_Port, LED77_Pin, (segment_data[num] & 0x40) ? SET : RESET);  // LED77
+	HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, (segment_data[num] & 0x01) ? SET : RESET);  // LED1
+	HAL_GPIO_WritePin(LED22_GPIO_Port, LED22_Pin, (segment_data[num] & 0x02) ? SET : RESET);  // LED2
+	HAL_GPIO_WritePin(LED33_GPIO_Port, LED33_Pin, (segment_data[num] & 0x04) ? SET : RESET);  // LED3
+	HAL_GPIO_WritePin(LED44_GPIO_Port, LED44_Pin, (segment_data[num] & 0x08) ? SET : RESET);  // LED4
+	HAL_GPIO_WritePin(LED55_GPIO_Port, LED55_Pin, (segment_data[num] & 0x10) ? SET : RESET);  // LED5
+	HAL_GPIO_WritePin(LED66_GPIO_Port, LED66_Pin, (segment_data[num] & 0x20) ? SET : RESET);  // LED6
+	HAL_GPIO_WritePin(LED77_GPIO_Port, LED77_Pin, (segment_data[num] & 0x40) ? SET : RESET);  // LED7
 }
 void trafficLightControl() {
     // Giai đoạn 1: Đèn đỏ tuyến 1 (5 giây), đèn xanh tuyến 2 (2 giây) và đèn vàng tuyến 2 (3 giây)
